@@ -17,7 +17,7 @@
         	input[type="text"],
         	input[type="password"] {
             	width: 200px; /* 设置输入框的宽度 */
-            	padding: 5px; /* 设置输入框的内边距 */
+            	padding: 50px; /* 设置输入框的内边距 */
            	margin-bottom: 10px; /* 设置输入框之间的间距 */
             }
     </style>
