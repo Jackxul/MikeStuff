@@ -1,10 +1,10 @@
 <?php
 	switch ($_SERVER["SCRIPT_NAME"]) {
-		case "/php-template/login_page.php":
+		case "login_page.php":
 			$CURRENT_PAGE = "Login"; 
 			$PAGE_TITLE = "Login_Demo";
 			break;
-		case "/php-template/database_page.php":
+		case "database_page.php":
 			$CURRENT_PAGE = "DataBase"; 
 			$PAGE_TITLE = "DataBase_Demo";
 			break;

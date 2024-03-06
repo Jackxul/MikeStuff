@@ -4,21 +4,22 @@
 <head>
 	<?php include("head-tag-contents.php");?>
     	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<title>登录页面</title>
+    	<title>Login Page</title>
 </head>
 <body>
 
 <?php include("design-top.php");?>
 <?php include("navigation.php");?>
-    <h2>欢迎登录</h2>
+<div class="container" id="main-content">
+    <h2>Please Login</h2>
     <form action="login.php" method="post">
-        <label for="username">用户名：</label>
+        <label for="username">User Name：</label>
         <input type="text" id="username" name="username" required><br><br>
-        <label for="password">密码：</label>
+        <label for="password">Password：</label>
         <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="登录">
+        <input type="submit" value="Login">
     </form>
+</div>
 <?php include("footer.php");?>
 </body>
 </html>
