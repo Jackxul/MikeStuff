@@ -1,30 +1,27 @@
-<?php
+<?php include("includes/a_config.php");?>
+<!DOCTYPE html>
+<html>
+<head>
+	<?php include("includes/head-tag-contents.php");?>
+</head>
+<body>
 
-echo "Hello World77889900!";
-$psdFilePath = 'page1.psd';
-$pngFilePath = 'page1.png';
-exec("convert $psdFilePath $pngFilePath");
-if (file_exists($pngFilePath)) {
-    echo "PSD 文件已成功转换为 PNG 格式！";
-} else {
-    echo "转换失败，请检查文件路径和 ImageMagick 是否正确安装。";
-}
-// PHP Data Objects(PDO) Sample Code:
-try {
-    $conn = new PDO("sqlsrv:server = tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342; Database = AdventureWorks", "ecvdemouser", "ecv@demouser2024");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";  // 連線成功時的提示
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
+<?php include("includes/design-top.php");?>
+<?php include("includes/navigation.php");?>
 
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "ecvdemouser@sqlmikaydemo", "pwd" => "ecv@demouser2024", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+<div class="container" id="main-content">
+	<h2>Welcome to my website!</h2>
+	<p>Some content goes here! Let's go with the classic "lorem ipsum."</p>
 
-// 其他你的應用程式邏輯可以放在這之後
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+</div>
 
-?>
+<?php include("includes/footer.php");?>
+
+</body>
+</html>
