@@ -4,7 +4,7 @@
 			$CURRENT_PAGE = "Login"; 
 			$PAGE_TITLE = "Login_Demo";
 			break;
-		case "/php-template/DataBase_Page.php":
+		case "/php-template/database_page.php":
 			$CURRENT_PAGE = "DataBase"; 
 			$PAGE_TITLE = "DataBase_Demo";
 			break;
