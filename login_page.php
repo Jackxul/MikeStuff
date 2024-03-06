@@ -17,22 +17,22 @@
         	input[type="text"],
         	input[type="password"] {
             	width: 200px; /* 设置输入框的宽度 */
-            	padding: 50px; /* 设置输入框的内边距 */
+            	padding: 5px; /* 设置输入框的内边距 */
            	margin-bottom: 10px; /* 设置输入框之间的间距 */
             }
     </style>
     <form action="login.php" method="post">
 
-        <label for="region">Region：</label>
+        <label for="region">Region</label><br>
         <input type="text" id="region" name="region" required><br><br>
 
-        <label for="projectname">Project Name：</label>
+        <label for="projectname">Project Name</label><br>
         <input type="text" id="projectname" name="projectname" required><br><br>
 
-        <label for="servicename">Service Name：</label>
+        <label for="servicename">Service Name</label><br>
         <input type="text" id="servicename" name="servicename" required><br><br>
 
-        <label for="cost">Cost：</label>
+        <label for="cost">Cost</label><br>
         <input type="text" id="cost" name="cost" required><br><br>
 
         <input type="submit" value="Login">
