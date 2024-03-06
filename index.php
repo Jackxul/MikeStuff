@@ -1,7 +1,14 @@
 <?php
 
 echo "Hello World77889900!";
-
+$psdFilePath = 'page1.psd';
+$pngFilePath = 'page1.png';
+exec("convert $psdFilePath $pngFilePath");
+if (file_exists($pngFilePath)) {
+    echo "PSD 文件已成功转换为 PNG 格式！";
+} else {
+    echo "转换失败，请检查文件路径和 ImageMagick 是否正确安装。";
+}
 // PHP Data Objects(PDO) Sample Code:
 try {
     $conn = new PDO("sqlsrv:server = tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342; Database = AdventureWorks", "ecvdemouser", "ecv@demouser2024");
