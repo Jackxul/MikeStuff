@@ -35,7 +35,7 @@
         <label for="cost">Cost</label><br>
         <input type="text" id="cost" name="cost" required><br><br>
 
-        <input type="submit" value="Login">
+        <input type="submit" value="Store">
     </form>
 </div>
 <?php include("footer.php");?>
