@@ -13,16 +13,7 @@
 	<?php include("head-tag-contents.php");?>
     	<meta charset="UTF-8">
     	<title>Login Page</title>
-
-
-	<script>
-        function displayMessage() {
-            // 获取显示消息的元素
-            var messageElement = document.getElementById("message");
-            // 设置消息内容
-            messageElement.innerHTML = "登录按钮被点击了！";
-        }
-    </script>
+	
 </head>
 <body>
 
@@ -39,6 +30,17 @@
            	margin-bottom: 10px; /* 设置输入框之间的间距 */
             }
     </style>
+
+
+	<?php 
+	        if(isset($_POST['button1'])) { 
+	            echo "This is Button1 that is selected"; 
+	        } 
+	        if(isset($_POST['button2'])) { 
+	            echo "This is Button2 that is selected"; 
+	        } 
+	?> 
+
     <form action="login.php" method="post">
 
         <label for="region">Region</label><br>
@@ -53,7 +55,7 @@
         <label for="cost">Cost</label><br>
         <input type="text" id="cost" name="cost" required><br><br>
 
-        <input type="submit" value="Login" onclick="displayMessage()">
+        <input type="submit" value="Login" name="button1" />
     </form>
 </div>
 <?php include("footer.php");?>
