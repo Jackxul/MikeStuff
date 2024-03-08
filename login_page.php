@@ -31,7 +31,7 @@
 	        } 
 	?> 
 
-    <form action="login.php" method="post">
+    <form method="post">
 
         <label for="region">Region</label><br>
         <input type="text" id="region" name="region" required><br><br>
