@@ -56,6 +56,12 @@
         <input type="text" id="cost" name="cost" required><br><br>
 
         <input type="submit" value="Login" name="button1" />
+
+	<input type="submit" name="button1"
+                value="Button1"/> 
+          
+        <input type="submit" name="button2"
+                value="Button2"/> 
     </form>
 </div>
 <?php include("footer.php");?>
