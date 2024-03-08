@@ -55,8 +55,6 @@
         <label for="cost">Cost</label><br>
         <input type="text" id="cost" name="cost" required><br><br>
 
-        <input type="submit" value="Login" name="button1" />
-
 	<input type="submit" name="button1"
                 value="Button1"/> 
           
