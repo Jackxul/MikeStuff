@@ -1,13 +1,6 @@
 <?php include("a_config.php");?>
 <!DOCTYPE html>
 
-	$db_host = "sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
-	$db_user = "ecvdemouser";
-	$db_password = "ecv@demouser2024";
-	$db_name = "mikesqltest";
-
-    // 连接数据库
-    $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 <html>
 <head>
 	<?php include("head-tag-contents.php");?>
@@ -26,6 +19,23 @@
 	        if(isset($_POST['button2'])) { 
 	            echo "Data insert to DB !"; 
 	        } 
+
+
+
+		$db_host = "sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
+		$db_user = "ecvdemouser";
+		$db_password = "ecv@demouser2024";
+		$db_name = "mikesqltest";
+		
+		    // 连接数据库
+	   	$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+
+		if(!$conn) {
+    			die("Connection failed: " . mysqli_connect_error());
+  		}
+  		echo "Connected successfully!";
+
+  		mysqli_close($conn);
 	?> 
 
     <form method="post">
@@ -43,7 +53,6 @@
         <input type="text" id="cost" name="cost" required><br><br>
 
 	<input type="button" name="button1" oneclick="emptyTextbox()" value="Cancel"/> 
-          
         <input type="submit" name="button2" value="Send"/> 
     </form>
 
