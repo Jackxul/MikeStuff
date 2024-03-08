@@ -21,16 +21,6 @@
 <?php include("navigation.php");?>
 <div class="container" id="main-content">
     <h2>Please Login</h2>
-    <style>
-        	/* 使用 CSS 来设置输入框的样式 */
-        	input[type="text"],
-        	input[type="password"] {
-            	width: 200px; /* 设置输入框的宽度 */
-            	padding: 5px; /* 设置输入框的内边距 */
-           	margin-bottom: 10px; /* 设置输入框之间的间距 */
-            }
-    </style>
-
 
 	<?php 
 	        if(isset($_POST['button1'])) { 
