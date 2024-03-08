@@ -1,6 +1,6 @@
 <?php
 
-echo "Hello World2!";
+echo "Hello World5!";
 
 // PHP Data Objects(PDO) Sample Code:
 try {
