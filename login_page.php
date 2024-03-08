@@ -18,6 +18,7 @@
 	<?php 
 	        if(isset($_POST['button2'])) { 
 	            echo "Data insert to DB !"; 
+  		    mysqli_close($conn);
 	        } 
 
 
@@ -35,7 +36,6 @@
   		}
   		echo "Connected successfully!";
 
-  		mysqli_close($conn);
 	?> 
 
     <form method="post">
