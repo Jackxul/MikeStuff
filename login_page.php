@@ -16,25 +16,43 @@
     <h2>Please Login</h2>
 
 	<?php 
+
+
+
+		try {
+		    $conn = new PDO("sqlsrv:server = tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342; Database = AdventureWorks", "ecvdemouser", "ecv@demouser2024");
+		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    echo "Connected successfully";  // 連線成功時的提示
+		}
+		catch (PDOException $e) {
+		    print("Error connecting to SQL Server.");
+		    die(print_r($e));
+		}
+		
+		// SQL Server Extension Sample Code:
+		$connectionInfo = array("UID" => "ecvdemouser@sqlmikaydemo", "pwd" => "ecv@demouser2024", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+		$serverName = "tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
+		$conn = sqlsrv_connect($serverName, $connectionInfo);
+		
+		// 其他你的應用程式邏輯可以放在這之後
 	        if(isset($_POST['button2'])) { 
 	            echo "Data insert to DB !"; 
-  		    mysqli_close($conn);
 	        } 
 
 
 
-		$db_host = "sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
-		$db_user = "ecvdemouser";
-		$db_password = "ecv@demouser2024";
-		$db_name = "mikesqltest";
-		
-		    // 连接数据库
-	   	$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+	//	$db_host = "sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
+	//	$db_user = "ecvdemouser";
+	//	$db_password = "ecv@demouser2024";
+	//	$db_name = "mikesqltest";
+	//	
+	//	    // 连接数据库
+	//   	$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 
-		if(!$conn) {
-    			die("Connection failed: " . mysqli_connect_error());
-  		}
-  		echo "Connected successfully!";
+	//	if(!$conn) {
+    	//		die("Connection failed: " . mysqli_connect_error());
+  	//	}
+  	//	echo "Connected successfully!";
 
 	?> 
 
