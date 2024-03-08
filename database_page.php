@@ -1,7 +1,9 @@
+<?php include("a_config.php");?>
 <!DOCTYPE html> 
 <html> 
 	
 <head> 
+	<?php include("head-tag-contents.php");?>
 	<title> 
 		How to call PHP function 
 		on the click of a Button ? 
@@ -9,6 +11,8 @@
 </head> 
 
 <body style="text-align:center;"> 
+<?php include("design-top.php");?>
+<?php include("navigation.php");?>
 	
 	<h1 style="color:green;"> 
 		GeeksforGeeks 
@@ -36,6 +40,7 @@
 		<input type="submit" name="button2"
 				value="Button2"/> 
 	</form> 
+<?php include("footer.php");?>
 </body> 
 
 </html> 
