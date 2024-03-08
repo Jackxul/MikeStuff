@@ -23,11 +23,8 @@
     <h2>Please Login</h2>
 
 	<?php 
-	        if(isset($_POST['button1'])) { 
-	            echo "This is Button1 that is selected"; 
-	        } 
 	        if(isset($_POST['button2'])) { 
-	            echo "This is Button2 that is selected"; 
+	            echo "Data insert to DB !"; 
 	        } 
 	?> 
 
@@ -45,12 +42,27 @@
         <label for="cost">Cost</label><br>
         <input type="text" id="cost" name="cost" required><br><br>
 
-	<input type="submit" name="button1"
-                value="Button1"/> 
+	<input type="button" name="button1" oneclick="emptyTextbox()" value="Cancel"/> 
           
-        <input type="submit" name="button2"
-                value="Button2"/> 
+        <input type="submit" name="button2" value="Send"/> 
     </form>
+
+    <script>
+        function emptyTextbox() {
+            // Get the textbox element
+            var region = document.getElementById("region");
+            var pjname = document.getElementById("projectname");
+            var servicename = document.getElementById("servicename");
+            var cost = document.getElementById("cost");
+            // Set the value of the textbox to an empty string
+            region.value = "";
+            pjname.value = "";
+            servicename.value = "";
+            cost.value = "";
+        }
+    </script>
+    
+
 </div>
 <?php include("footer.php");?>
 </body>
