@@ -36,7 +36,20 @@
 		
 		// 其他你的應用程式邏輯可以放在這之後
 	        if(isset($_POST['button2'])) { 
-	            echo "Data insert to DB !"; 
+	            //echo "Data insert to DB !"; 
+			$region = $_POST['region'];
+            		$projectname = $_POST['projectname'];
+            		$servicename = $_POST['servicename'];
+            		$cost = $_POST['cost'];
+
+			$sql = "INSERT INTO your_table (Region, ProjectName, ServiceName, Cost) VALUES ('$region', '$projectname', '$servicename', '$cost')";
+            
+            		if ($conn->query($sql) === TRUE) {
+                		echo "New record created successfully";
+            		} else {
+                		echo "Error: " . $sql . "<br>" . $conn->error;
+            		}
+
 	        } 
 
 
