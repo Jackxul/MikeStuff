@@ -42,7 +42,7 @@
             		$servicename = $_POST['servicename'];
             		$cost = $_POST['cost'];
 
-			$sql = "INSERT INTO your_table (Region, ProjectName, ServiceName, Cost) VALUES ('$region', '$projectname', '$servicename', '$cost')";
+			$sql = "INSERT INTO Table_0 (Region, ProjectName, ServiceName, Cost) VALUES ('$region', '$projectname', '$servicename', '$cost')";
             
             		if ($conn->query($sql) === TRUE) {
                 		echo "New record created successfully";
