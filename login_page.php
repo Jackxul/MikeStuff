@@ -20,9 +20,10 @@
 
 
 		try {
-		    $conn = new PDO("sqlsrv:server = tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342; Database = AdventureWorks", "ecvdemouser", "ecv@demouser2024");
+		    $conn = new PDO("sqlsrv:server = tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342; Database = mikesqltest", "ecvdemouser", "ecv@demouser2024");
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    echo "Connected successfully";  // 連線成功時的提示
+		    echo "Connected successfully123";  // 連線成功時的提示
+			echo "Current database: " . $conn->query('SELECT DB_NAME()')->fetchColumn() . "<br>";
 		}
 		catch (PDOException $e) {
 		    print("Error connecting to SQL Server.");
@@ -30,25 +31,29 @@
 		}
 		
 		// SQL Server Extension Sample Code:
-		$connectionInfo = array("UID" => "ecvdemouser@sqlmikaydemo", "pwd" => "ecv@demouser2024", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-		$serverName = "tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
-		$conn = sqlsrv_connect($serverName, $connectionInfo);
+		//$connectionInfo = array("UID" => "ecvdemouser@sqlmikaydemo", "pwd" => "ecv@demouser2024", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+		//$serverName = "tcp:sqlmikaydemo.public.d25eecdeef3c.database.windows.net,3342";
+		//$conn = sqlsrv_connect($serverName, $connectionInfo);
 		
 		// 其他你的應用程式邏輯可以放在這之後
 	        if(isset($_POST['button2'])) { 
 	            //echo "Data insert to DB !"; 
-			$region = $_POST['region'];
+					$region = $_POST['region'];
             		$projectname = $_POST['projectname'];
             		$servicename = $_POST['servicename'];
             		$cost = $_POST['cost'];
+			
+    		$sql = "INSERT INTO [Table_1] (Region, Projectname, Servicename, Cost) VALUES (?, ?, ?, ?)";    
+    		$stmt= $conn->prepare($sql);    
+    		$stmt->execute([$region, $projectname, $servicename, $cost]);
 
-			$sql = "INSERT INTO Table_0 (Region, ProjectName, ServiceName, Cost) VALUES ('$region', '$projectname', '$servicename', '$cost')";
-            
-            		if ($conn->query($sql) === TRUE) {
-                		echo "New record created successfully";
-            		} else {
-                		echo "Error: " . $sql . "<br>" . $conn->error;
-            		}
+			//$sql = "INSERT INTO Table_0 (Region, ProjectName, ServiceName, Cost) VALUES ('$region', '$projectname', '$servicename', '$cost')";
+            //
+            //		if ($conn->query($sql) === TRUE) {
+            //    		echo "New record created successfully";
+            //		} else {
+            //    		echo "Error: " . $sql . "<br>" . $conn->error;
+            //		}
 
 	        } 
 
@@ -83,7 +88,7 @@
         <label for="cost">Cost</label><br>
         <input type="text" id="cost" name="cost" required><br><br>
 
-	<input type="button" name="button1" oneclick="emptyTextbox()" value="Cancel"/> 
+	<input type="button" name="button1" onclick="emptyTextbox()" value="Cancel"/> 
         <input type="submit" name="button2" value="Send"/> 
     </form>
 
